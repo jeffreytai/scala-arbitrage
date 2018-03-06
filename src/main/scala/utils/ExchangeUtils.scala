@@ -22,19 +22,15 @@ object ExchangeUtils {
   )
 
   def usdArbitrageThreshold(currencyPair: CurrencyPair): Double = {
-    val amount =
-      if (constants.contains(currencyPair) && constants.apply(currencyPair).contains(USD_ARBITRAGE_THRESHOLD)) constants.apply(currencyPair).apply(USD_ARBITRAGE_THRESHOLD)
-      else Double.MaxValue
-
-    amount
+    if (constants.contains(currencyPair) &&
+      constants.apply(currencyPair).contains(USD_ARBITRAGE_THRESHOLD)) constants.apply(currencyPair).apply(USD_ARBITRAGE_THRESHOLD)
+    else Double.MaxValue
   }
 
   def percentageArbitrageThreshold(currencyPair: CurrencyPair): Double = {
-    val amount =
-      if (constants.contains(currencyPair) && constants.apply(currencyPair).contains(PERCENTAGE_ARBITRAGE_THRESHOLD)) constants.apply(currencyPair).apply(PERCENTAGE_ARBITRAGE_THRESHOLD)
-      else Double.MaxValue
-
-    amount
+    if (constants.contains(currencyPair) &&
+      constants.apply(currencyPair).contains(PERCENTAGE_ARBITRAGE_THRESHOLD)) constants.apply(currencyPair).apply(PERCENTAGE_ARBITRAGE_THRESHOLD)
+    else Double.MaxValue
   }
 
   /**

@@ -6,5 +6,5 @@ import org.knowm.xchange.gdax.GDAXExchange
 class Gdax extends GenericExchange {
 
   val exchange: Exchange = ExchangeFactory.INSTANCE.createExchange(new GDAXExchange().getClass)
-
+  val name = "GDAX"
 }

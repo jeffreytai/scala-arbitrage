@@ -9,7 +9,11 @@ object Main extends App {
   val cexio: GenericExchange = new Cexio
   val kraken: GenericExchange = new Kraken
 
-  val exchanges: List[GenericExchange] = List(gdax, gemini, bitstamp, cexio, kraken)
-  val comparer: ExchangeComparer = new ExchangeComparer(CurrencyPair.BTC_USD, exchanges)
-  comparer.analyzePrices()
+  val exchanges = List(gdax, gemini, bitstamp, cexio, kraken)
+
+  val btcPriceAnalyzer = new ExchangeProcessor(CurrencyPair.BTC_USD, exchanges)
+  btcPriceAnalyzer.analyzePrices()
+
+  val ethPriceAnalyzer = new ExchangeProcessor(CurrencyPair.ETH_USD, exchanges)
+  ethPriceAnalyzer.analyzePrices()
 }
